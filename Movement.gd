@@ -15,7 +15,17 @@ func check_movement_up():
 func check_movement_right():
 	if get_parent().position.x < 512:
 		return true
-		
+
+func check_for_walls(loc):
+	var walls = get_parent().get_parent().walls
+	for i in walls:
+		if i.position == loc:
+			return false
+	
+	return true
+	
+	
+	
 func reverse_roles_three():
 	var size = get_parent().get_parent().directions.size()
 	if size == 3:
@@ -52,9 +62,9 @@ func finished():
 		
 		
 func _ready():
-	pass # Replace with function body.
+	pass
 
-func _process(delta):
+func _process(_delta):
 	finished()
 	reverse_roles_three()
 	
@@ -63,11 +73,23 @@ func _process(delta):
 		match direction:
 			"Up":
 				if check_movement_up():
-					get_parent().position.y = get_parent().position.y - 64
+					var temp = get_parent().position
+					temp.x = get_parent().position.x
+					temp.y = get_parent().position.y - 64
+					if check_for_walls(temp):
+						get_parent().position.y = get_parent().position.y - 64
 			"Right":
 				if check_movement_right():
-					get_parent().position.x = get_parent().position.x + 64
+					var temp = get_parent().position
+					temp.x = get_parent().position.x + 64
+					temp.y = get_parent().position.y 
+					if check_for_walls(temp):
+						get_parent().position.x = get_parent().position.x + 64
 			"Diagonal":
 				if check_movement_up() && check_movement_right():
-					get_parent().position.y = get_parent().position.y - 64
-					get_parent().position.x = get_parent().position.x + 64
+					var temp = get_parent().position
+					temp.x = get_parent().position.x + 64
+					temp.y = get_parent().position.y - 64
+					if check_for_walls(temp):
+						get_parent().position.y = get_parent().position.y - 64
+						get_parent().position.x = get_parent().position.x + 64
