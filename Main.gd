@@ -5,6 +5,8 @@ var matrix_fields = []
 var width = 8
 var height = 8
 
+var end = false
+
 var walls = []
 
 var test_arr = []
@@ -76,5 +78,14 @@ func _ready():
 
 
 func _process(_delta):
-	if Input.is_action_just_pressed("ui_reset"):
-		get_tree().reload_current_scene()
+	if directions == [] && !end:
+		$Complete.play()
+		end = true
+	else:
+		if Input.is_action_just_pressed("ui_reset"):
+			get_tree().reload_current_scene()
+		if Input.is_action_just_pressed("ui_reverse"):
+			$Swap.play()
+		if Input.is_action_just_pressed("ui_accept"):
+			$Move.play()
+	

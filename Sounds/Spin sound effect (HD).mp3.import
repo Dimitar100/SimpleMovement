@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Spin sound effect (HD).mp3-266ec29e70a8457c76acab26834ad14a.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Spin sound effect (HD).mp3"
+dest_files=[ "res://.import/Spin sound effect (HD).mp3-266ec29e70a8457c76acab26834ad14a.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

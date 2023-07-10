@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/without-warning-unexpected-appearance-turn-of-events-153300.mp3-4c317c05a48278a27864d6e27a84dd89.mp3str"
+
+[deps]
+
+source_file="res://Sounds/without-warning-unexpected-appearance-turn-of-events-153300.mp3"
+dest_files=[ "res://.import/without-warning-unexpected-appearance-turn-of-events-153300.mp3-4c317c05a48278a27864d6e27a84dd89.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
